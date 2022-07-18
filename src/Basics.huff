@@ -1,0 +1,12 @@
+#define macro MAIN() = takes (0) returns (0) {
+    0x48656c6c6f2c20576f726c6421
+    0x00 mstore // ["Hello, World!"]
+
+    success     // [success_label_pc, "Hello, World!"]
+    jump        // ["Hello, World!"]
+
+    0x00 0x00 revert
+
+    success:
+        0xd 0x13 return
+}
